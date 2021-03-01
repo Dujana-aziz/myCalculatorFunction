@@ -1,0 +1,67 @@
+#include<iostream>
+int a = 0;
+int calculation(char,int);
+using namespace std;
+int main(){
+	int num[500], j;
+	float result = 0;
+	bool repeat = 1;
+	char i ;
+	char op = '+';
+	while(repeat == 1){
+		while(i != 'N'){
+			for( j = 0; j <= 500; j++){
+				cout<<"Enter operand = ";
+				cin>>num[j];
+				a = result;
+				//cout<<result<<"\n";
+				result = calculation( op, num[j]);
+				//cout<<result<<"\n";
+				cout<<"Enter operator(+,-,*,/),If you dont want then press N = ";
+				cin>>op;
+				i = op;
+				break;
+			}
+			
+		}
+		cout<<"Total = "<<result<<endl;
+		cout<<"If you want to calculate again press 1 else 0 = ";
+		cin>>repeat;
+		i = 'A';
+		result = 0;
+		a = 0;
+		op = '+';
+	}
+}
+int calculation(char b ,int c){
+	
+	//cout<<"b =  "<<b<<" c = "<<c<<" a = "<<a<<endl;
+	switch(b){
+					case '+':{
+						a = (a + c);
+						
+						break;
+					}
+					case '-':{
+						a = (a - c);
+						break;
+					}
+					case '*':{
+						a = (a * c);
+						break;
+					}
+					case '/':{
+						a = (a / c);
+						break;
+					}
+					case 'N':{
+						break;
+					}
+				}
+
+	return a;
+}
+
+
+
+
